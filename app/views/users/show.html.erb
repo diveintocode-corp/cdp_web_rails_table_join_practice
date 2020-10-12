@@ -5,19 +5,12 @@
   <%= @user.name %>
 </p>
 
-<%# @user.books.preload(:variations).each do |book| %>
-<% @user.books.eager_load(:variations).each do |book| %>
+<% @user.books.each do |book| %>
   <% book.variations.each do |variation| %>
     <p><%= variation.kind %></p>
   <% end %>
 <% end %>
 
-
-<%# 起きないケース %>
-<%# @user.books.each do |book| %>
-<%#  <p><%#= book.title ％></p> %>
-<%# end %>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
+
