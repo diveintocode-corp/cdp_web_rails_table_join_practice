@@ -9,7 +9,10 @@ Bundler.require(*Rails.groups)
 module Rails6032Ruby271NPlus1Sample
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 8.1
+
+    # Ignore non-Ruby lib directories when eager loading application code.
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

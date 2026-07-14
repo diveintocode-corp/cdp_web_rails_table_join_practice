@@ -1,24 +1,45 @@
-# README
+# Table Join Practice
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails application is a training sample for learning associations between
+`User`, `Book`, and `Variation` records and observing the queries generated when
+related tables are accessed.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+- Ruby 4.0.5
+- Ruby on Rails 8.1.3
+- Bundler 4.0.10
+- Node.js 24.18.0
+- Yarn 1.x
+- SQLite 3
 
-* System dependencies
+PostgreSQL is not required; this application intentionally continues to use
+SQLite.
 
-* Configuration
+## Setup
 
-* Database creation
+```sh
+bundle install
+yarn install --frozen-lockfile
+yarn build
+bundle exec rails db:prepare
+```
 
-* Database initialization
+No application-specific environment variables are required for development or
+test. Standard Rails variables such as `PORT`, `RAILS_ENV`, and
+`RAILS_MAX_THREADS` may be set when needed.
 
-* How to run the test suite
+## Run the application
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+bundle exec rails server
+```
 
-* Deployment instructions
+Run `yarn build --watch` in another terminal while editing JavaScript.
 
-* ...
+## Test
+
+```sh
+bundle exec rails test
+bundle exec rails test:system
+```
